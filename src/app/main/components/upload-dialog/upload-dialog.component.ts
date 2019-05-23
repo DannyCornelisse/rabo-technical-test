@@ -28,10 +28,6 @@ export class UploadDialogComponent implements OnInit {
     this.dialogRef.close(this.data);
   }
 
-  /**
-   *
-   * @param e {any}
-   */
   onFileChange(e: any): void {
     const reader = new FileReader();
 

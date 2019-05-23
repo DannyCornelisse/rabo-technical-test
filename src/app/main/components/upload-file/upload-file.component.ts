@@ -16,11 +16,24 @@ export class UploadFileComponent implements OnInit {
 
   constructor(
     @Host() private parent: AppComponent,
-    private dialog: MatDialog,
+    public dialog: MatDialog, // public for unit test purposes
     private csvParser: CsvParserService
   ) { }
 
   ngOnInit() {
+  }
+
+  closeDialog(val) {
+    this.dialogRef.close(val);
+  }
+
+  parseCsvData(data: string): void {
+    this.parsedCsvData = this.csvParser.parseFromString(data);
+    if (this.parsedCsvData) {
+      this.parent.tableData = this.parsedCsvData;
+    } else {
+      console.log('Data could not be parsed');
+    }
   }
 
   openFileDialog() {
@@ -30,13 +43,7 @@ export class UploadFileComponent implements OnInit {
     this.dialogRef.afterClosed().subscribe(
       (data: string) => {
         if (data) {
-          this.parsedCsvData = this.csvParser.parseFromString(data);
-          if (this.parsedCsvData) {
-            this.parent.tableData = this.parsedCsvData;
-          } else {
-            console.log('Data could not be parsed');
-
-          }
+          this.parseCsvData(data);
         } else {
           console.log('This file doesn\'t contain any data');
         }

@@ -22,7 +22,7 @@ export class IssueTableComponent implements OnInit, OnChanges {
     };
   }
 
-  ngOnChanges (changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges) {
     if (changes.tableData.currentValue) {
       this.tableData = changes.tableData.currentValue;
       this.parseTable(this.tableData);
