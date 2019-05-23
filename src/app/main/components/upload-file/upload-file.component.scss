@@ -1,0 +1,21 @@
+@import "./../../../../global-styles/variables.scss";
+
+.upload-file {
+  &--container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  &__header {
+    border-bottom: 2px solid $rabo-orange;
+  }
+  &__content {
+    padding-top: 0.5rem;
+  }
+}
+
+::ng-deep .upload-file__button {
+  color: $rabo-blue;
+  &:hover {
+    color: $rabo-orange;
+  }
+}

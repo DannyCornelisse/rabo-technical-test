@@ -1,0 +1,19 @@
+<div class="issue-table__container" *ngIf="tableData">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Enter minimal issue count to filter" type="number" [(ngModel)]="minIssueCount">
+  </mat-form-field>
+  <table class="issue-table">
+    <tr class="issue-table__heading-row">
+      <th class="issue-table__heading" *ngFor="let heading of table.headings">{{heading}}</th>
+    </tr>
+    <ng-container *ngFor="let person of table.people">
+      <tr class="issue-table__people-row" *ngIf="!minIssueCount || person[2] >= minIssueCount">
+        <td class="issue-table__person-detail" *ngFor="let detail of person; let i = index">
+          <span *ngIf="i !== 3">{{detail}}</span>
+          <span *ngIf="i === 3">{{detail | date}}</span>
+        </td>
+      </tr>
+    </ng-container>
+  </table>
+</div>
+

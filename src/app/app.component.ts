@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CsvData } from './interfaces/issue-table';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'rabo-technical-test';
+  public tableData: CsvData;
 }

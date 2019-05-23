@@ -1,0 +1,19 @@
+<mat-card class="upload-file__container">
+  <mat-card-header class="upload-file__header">
+    <h4 class="upload-file__title">Upload csv</h4>
+  </mat-card-header>
+  <mat-card-content class="upload-file__content">
+    <p>
+      Upload a csv file and view as table below
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button class="upload-file__button" mat-raised-button (click)="openFileDialog()">Open .csv file</button>
+  </mat-card-actions>
+</mat-card>
+
+<!-- <form class="upload-file__form">
+  <mat-form-field class="upload-file__form-field">
+    <input class="upload-file__input" type="file" id="csvUploadInput" #csvUploadInput matInput placeholder="Favorite food" value="Sushi">
+  </mat-form-field>
+</form> -->
