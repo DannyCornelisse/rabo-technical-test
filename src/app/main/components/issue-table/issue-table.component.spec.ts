@@ -68,7 +68,7 @@ describe('IssueTableComponent', () => {
     expect(component.table.people).toEqual(currentValue);
   });
 
-  fit('should filter by minimal issue count', () => {
+  it('should filter by minimal issue count', () => {
     component.minIssueCount = 4;
     fixture.detectChanges();
     const tableEl = fixture.nativeElement;

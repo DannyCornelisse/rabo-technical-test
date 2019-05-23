@@ -1,6 +1,20 @@
+
+
 # RaboTechnicalTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+
+## Frontend deciscion log
+- Angular Material was chosen to quickly scaffold components for the UI, providing fast development
+- Down-side of angular materials is the inflexibility in terms of styling, with the danger of resorting to pseudo-selectors such as ::ng-deep. However, for this technical test I decided to accept this.
+- Papa was chosen to parse csv to json/js. In my investigation for a solution I mainly encoutered manual parsing of csv strings to json/js, mostly using String.prototype.replace in combination with regular expressions. In the light of time constraints I chose Papa to parse the csv to js, which is maintained and regularly updated by its developers. Also, manual parsing of csv may introduce errors.
+- Angular cli was used to quickly generate new components, services and modules
+
+## Deploying app 
+Preferably, this app is automatically deployed to a staging/production environment everytime the master/develop branch is updated (push/merge). Open source tool: Jenkins.
+requirements: 
+- run `ng test --single-run=true` for unit tests 
+- run `ng e2e` for end-to-end testing
 
 ## Development server
 
