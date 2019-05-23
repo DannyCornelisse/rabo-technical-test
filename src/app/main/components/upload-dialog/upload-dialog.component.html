@@ -1,7 +1,7 @@
-<div mat-dialog-content>
-  <p>Select file to upload</p>
-  <form [formGroup]="formGroup" novalidate (ngSubmit)="onSubmit()">
-    <input type="file" accept=".csv" (change)="onFileChange($event)" formControlName="file">
-    <button type="submit" mat-raised-button [disabled]="formGroup.pristine">Submit</button>
+<div mat-dialog-content class="upload-dialog__content">
+  <p class="upload-dialog__text">Select file to upload</p>
+  <form class="upload-dialog__form" [formGroup]="formGroup" novalidate (ngSubmit)="onSubmit()">
+    <input class="upload-dialog__input" type="file" accept=".csv" (change)="onFileChange($event)" formControlName="file">
+    <button class="upload-dialog__submit" type="submit" mat-raised-button [disabled]="formGroup.pristine">Submit</button>
   </form>
 </div>

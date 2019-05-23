@@ -8,9 +8,18 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should show upload button', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to rabo-technical-test!');
+    const element = page.getElement('.upload-file__button');
+    expect(element.isPresent()).toBeTruthy();
+  });
+
+  it('should show upload dialog when clicking upload button', () => {
+    page.navigateTo();
+    const buttonElement = page.getElement('.upload-file__button');
+    buttonElement.click();
+    const dialogElement = page.getElement('.upload-dialog__content');
+    expect(dialogElement.isPresent()).toBeTruthy();
   });
 
   afterEach(async () => {
